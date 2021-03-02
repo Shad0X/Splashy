@@ -16,8 +16,13 @@ namespace Game.Player
 
         void Update()
         {
-            HandleMouseInput();
-            HandleTouchInput();
+            #if UNITY_STANDALONE
+                HandleMouseInput();
+            #endif
+
+            #if UNITY_IOS || UNITY_ANDROID
+                HandleTouchInput();
+            #endif
         }
 
         void ResetStats()
@@ -36,6 +41,7 @@ namespace Game.Player
         float worldSpaceDistanceX;
         const int LeftMouseButton = 0;
 
+        #if UNITY_STANDALONE
         void HandleMouseInput()
         {
             if (Input.GetMouseButtonDown(LeftMouseButton))
@@ -50,6 +56,7 @@ namespace Game.Player
                 MoveBallBasedOnInputPosition(Input.mousePosition);
             }
         }
+        #endif
 
         void MoveBallBasedOnInputPosition(Vector3 screenPosition)
         {
@@ -57,6 +64,7 @@ namespace Game.Player
             transform.position = new Vector3(newPos.x + worldSpaceDistanceX, transform.position.y, transform.position.z);
         }
 
+        #if UNITY_IOS || UNITY_ANDROID
         void HandleTouchInput()
         {
             if (Input.touchCount > 0)
@@ -75,6 +83,7 @@ namespace Game.Player
                 }
             }
         }
+        #endif
 
     }
 }
