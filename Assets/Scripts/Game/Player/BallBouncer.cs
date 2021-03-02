@@ -57,12 +57,12 @@ namespace Game.Player
         Tween tweenDown;
         void MoveDown()
         {
-            tweenDown = transform.DOMoveY(bottomPosition.y, timeToReachBottomPosition).OnComplete(CheckForPlatform);
+            tweenDown = transform.DOMoveY(bottomPosition.y, timeToReachBottomPosition).OnComplete(MoveUpIfPossible);
         }
 
         public event Action OnPlatformTouched;
 
-        void CheckForPlatform() //could use better name or refactoring..
+        void MoveUpIfPossible()
         {
             RaycastHit hit;
 

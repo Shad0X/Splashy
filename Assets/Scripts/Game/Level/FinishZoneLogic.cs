@@ -6,8 +6,6 @@ namespace Game.Level
 {
     public class FinishZoneLogic : MonoBehaviour
     {
-
-        
         GameObject ball;
 
         new ParticleSystem particleSystem;

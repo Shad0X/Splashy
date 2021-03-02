@@ -15,17 +15,17 @@ namespace Game.Level
         [SerializeField]
         float maxDistance = 3.5f;
 
-        public List<Vector3> GetNewPlatformPositions(int ammount)
+        public List<Vector3> GetNewPlatformPositions(int amount)
         {
             List<Vector3> positions = new List<Vector3>();
             positions.Add(startingPoint.transform.position);
 
-            if (ammount <= 1)
+            if (amount <= 1)
             {
                 return positions;
             }
 
-            for (int i = 0; i < ammount - 1; i++)
+            for (int i = 0; i < amount - 1; i++)
             {
                 positions.Add(GetNextPlatformPosition(positions[i]));
             }
