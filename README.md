@@ -7,8 +7,8 @@ Uses DOTween (free version)
 Should be working on PC and Mobile.
 
 Controlls:
-    - Press and hold Left Mouse button (or touch screen) 
-    - Move around input device to move Ball left / right on the screen
+    <br/>- Press and hold Left Mouse button (or touch screen) 
+    <br/>- Move around input device to move Ball left / right on the screen
 
 Very simple copy of https://apps.apple.com/us/app/splashy/id1319500389 gameplay without any of the extra content apart from playing through randomly generated levels from start to finish while gaining points for every platform touched. Far from perfect. 
 
